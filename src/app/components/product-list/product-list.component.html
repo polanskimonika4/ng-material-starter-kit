@@ -1,5 +1,25 @@
-<m<mat-card><mat-card-title></mat-card-title><mat-card-content></mat-card-content><<mat-selection-list role="list"><mat-list-option role="listitem" *ngFor="let item of products$ | async">{{item}}</mat-list-option></mat-selection-list><mat-selection-list role="list"><mat-list-option role="listitem" *ngFor="let item of products$ | async">{{item}}</mat-list-option></mat<mat-progress-spinner
-        [color]="'primary'"
-        [mode]="'indeterminate'"
-        [value]="50">
-      </mat-progress-spinner>-selection-list>/mat-card>at-list role="list"><mat-list-item role="listitem" *ngFor="let item of products$ | async">{{item}}</mat-list-item></mat-list>
+<mat-card><mat-card-title>
+    Products
+</mat-card-title><mat-card-content>
+    <mat-selection-list role="list" *ngFor="let item of products$ | async as products; else loadnig">
+        <ng-container> *ngFor="[products.lenght > 0; else ♯empty"
+            <mat-list-option role>="listitem"
+            *ngFor="let item of products">{{item.name}};{{item.price}}$</mat-list-option>
+        </ng-container>
+    <mat-list-option></mat-list-option>
+
+</mat-selection-list>  
+<ng-template ♯empty>
+    There is no data!
+</ng-template>
+<ng-template ♯loading>
+   <mat-progress-spinner
+   [color]="primary"
+   [mode]="indeterminate"
+   [value]="50"
+   >
+
+   </mat-progress-spinner>
+</ng-template>
+</mat-card-content>
+</mat-card>
